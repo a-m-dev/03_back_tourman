@@ -1,0 +1,10 @@
+version: '3.3'
+
+
+services: 
+
+  tourman_micro:
+    image: apps/tourman/backend
+    restart: always
+    ports: 
+      - 3000:3000
