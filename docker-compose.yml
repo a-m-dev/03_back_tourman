@@ -1,10 +1,33 @@
-version: '3.3'
+version: '3.5'
 
 
 services: 
 
-  tourman_micro:
+  tourman_backend:
     image: apps/tourman/backend
     restart: always
     ports: 
       - 3000:3000
+    links: 
+      - tourman_mongoDB
+    depends_on: 
+      - tourman_mongoDB
+    networks: 
+      - tourman_network
+
+  tourman_mongoDB:
+    container_name: mongo
+    image: mongo 
+    ports: 
+      - 27017:27017
+    networks: 
+      - tourman_network
+    # volumes: 
+    #   - ./data:/data/db
+
+
+
+# apps networks
+networks: 
+  tourman_network:
+    driver: bridge
