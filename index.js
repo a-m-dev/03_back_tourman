@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 const app = express()
 
-mongoose.connect('mongodb://tourman_mongoDB:27017/tourmandb')
+mongoose.connect('mongodb://mongoadmin:secret@tourman_mongoDB:27017/tourmandb')
 mongoose.Promise = global.Promise
 
 app.use('/uploads', express.static('uploads')) // access permision
