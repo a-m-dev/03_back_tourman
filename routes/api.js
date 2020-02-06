@@ -14,7 +14,7 @@ const Home = require('../models/home')
 const Review = require('../models/review')
 const Reserve = require('../models/reserve')
 const General = require('../models/general')
-const baseURL = 'http://tourman.affside.ir/'
+const baseURL = 'http://192.168.1.6:3000/'
 
 let persianDate = jalaali.toJalaali(new Date())
 persianDate = `${persianDate.jy}/${persianDate.jm}/${persianDate.jd}`
